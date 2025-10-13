@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌀 إعلان انطلاق بوت توبكاش الاستثماري 🌀</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <style>
+        /* 1. الإعدادات الأساسية والثوابت */
+        
+         :root {
+            --primary-color: #00bcd4;
+            --secondary-color: #ff5722;
+            --gold-color: #ffeb3b;
+            --background-start: #1c1c3a;
+            --background-end: #3b0066;
+            --text-light: #ffffff;
+            --text-dark: #333333;
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: 'Tajawal', sans-serif;
+            color: var(--text-light);
+            direction: rtl;
+            overflow-x: hidden;
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            /* الخلفية المتحركة */
+            background: linear-gradient(-45deg, var(--background-start), var(--background-end), #1b0042, #001f3f);
+            background-size: 400% 400%;
+            animation: gradient-animation 15s ease infinite;
+            padding: 20px;
+        }
+        
+        @keyframes gradient-animation {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+        
+        .announcement-card {
+            background: rgba(17, 17, 34, 0.95);
+            border: 3px solid var(--gold-color);
+            border-radius: 20px;
+            padding: 40px 30px;
+            max-width: 600px;
+            width: 100%;
+            text-align: center;
+            box-shadow: 0 0 40px rgba(0, 0, 0, 0.7);
+            animation: fadeInScale 1s ease-out forwards;
+            position: relative;
+            z-index: 10;
+        }
+        /* 2. محتوى الإعلان */
+        
+        h1 {
+            font-size: 2.8rem;
+            color: var(--gold-color);
+            margin-bottom: 20px;
+            text-shadow: 0 0 15px var(--gold-color);
+            animation: flashText 3s infinite alternate;
+        }
+        
+        .logo-text {
+            font-size: 3.5rem;
+            font-weight: 900;
+            color: var(--primary-color);
+            text-shadow: 0 0 20px var(--primary-color);
+            margin-bottom: 30px;
+            display: block;
+            line-height: 1.2;
+        }
+        
+        .tagline {
+            font-size: 1.4rem;
+            font-style: italic;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 30px;
+        }
+        
+        .feature-item {
+            font-size: 1.1rem;
+            margin: 15px 0;
+            font-weight: 700;
+        }
+        
+        .feature-item i {
+            color: var(--secondary-color);
+            margin-left: 10px;
+        }
+        
+        .divider {
+            border: 0;
+            height: 2px;
+            background: linear-gradient(to right, transparent, var(--primary-color), transparent);
+            margin: 30px 0;
+        }
+        /* 3. شريط الأزرار */
+        
+        .action-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 30px;
+        }
+        
+        .action-buttons a {
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-weight: 900;
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: flex;
+            align-items: center;
+            font-size: 1.1rem;
+        }
+        
+        .action-buttons a i {
+            margin-left: 8px;
+        }
+        /* تنسيق زر البوت */
+        
+        .btn-bot {
+            background-color: var(--secondary-color);
+            color: var(--text-light);
+            box-shadow: 0 0 20px rgba(255, 87, 34, 0.7);
+        }
+        
+        .btn-bot:hover {
+            transform: translateY(-5px) scale(1.05);
+            background-color: #ff7043;
+        }
+        /* تنسيق زر القناة */
+        
+        .btn-channel {
+            background-color: var(--primary-color);
+            color: var(--text-dark);
+            box-shadow: 0 0 20px rgba(0, 188, 212, 0.7);
+        }
+        
+        .btn-channel:hover {
+            transform: translateY(-5px) scale(1.05);
+            background-color: #00e5ff;
+        }
+        /* تنسيق زر الرجوع الجديد */
+        
+        .btn-back {
+            background: var(--background-darker);
+            color: var(--text-light);
+            border: 2px solid rgba(255, 255, 255, 0.5);
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+            order: 3;
+            /* لضمان ظهوره في الأسفل في الترتيب الأفقي */
+        }
+        
+        .btn-back:hover {
+            transform: scale(1.02);
+            background-color: rgba(255, 255, 255, 0.1);
+            border-color: var(--text-light);
+        }
+        /* 4. الأنيميشن */
+        
+        @keyframes fadeInScale {
+            0% {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        
+        @keyframes flashText {
+            0% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.8;
+                text-shadow: 0 0 25px var(--gold-color);
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+        /* 5. التجاوبية (Responsive Design) */
+        
+        @media (max-width: 600px) {
+            .announcement-card {
+                padding: 30px 15px;
+                margin: 0;
+                border-radius: 0;
+            }
+            h1 {
+                font-size: 2rem;
+            }
+            .logo-text {
+                font-size: 2.5rem;
+            }
+            .tagline {
+                font-size: 1.1rem;
+            }
+            .feature-item {
+                font-size: 1rem;
+            }
+            .action-buttons {
+                flex-direction: column;
+                gap: 10px;
+            }
+            /* جعل جميع الأزرار تأخذ عرض الشاشة بالكامل */
+            .action-buttons a {
+                width: 100%;
+                justify-content: center;
+                padding: 12px 20px;
+                font-size: 1rem;
+                order: initial;
+                /* إلغاء خاصية order للهواتف */
+            }
+            /* تعديل التذييل ليتماشى مع البطاقة */
+            footer {
+                max-width: 100%;
+                border-radius: 0;
+            }
+        }
+        /* 6. التذييل (لإكمال الصفحة) */
+        
+        footer {
+            background-color: rgba(13, 13, 26, 0.8);
+            text-align: center;
+            padding: 10px;
+            margin-top: 30px;
+            width: 100%;
+            max-width: 600px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 0 0 15px 15px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            z-index: 10;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="announcement-card">
+
+        <h1>🌀 إعلان رسمي 🌀</h1>
+
+        <span class="logo-text">
+            💎 تـــوب كــــاش TopCash 🚀
+        </span>
+
+        <p class="tagline">
+            انضم الآن إلى عائلة توبكاش وابدأ رحلتك الاستثمارية الذكية!
+        </p>
+
+        <hr class="divider">
+
+        <p class="feature-item">
+            <i class="fas fa-check-circle"></i> **فعّل عدادك اليوم،** واغتنم الفرصة الذهبية لتكون من أوائل المستفيدين.
+        </p>
+        <p class="feature-item">
+            <i class="fas fa-dollar-sign"></i> **اربح أكثر،** وطور عدادك مع أقوى مجتمع استثماري.
+        </p>
+        <p class="feature-item">
+            <i class="fas fa-star"></i> **التميز – الأمان – الأرباح المستمرة**
+        </p>
+
+        <hr class="divider">
+
+        <p style="font-size: 1.3rem; margin-bottom: 25px; color: var(--secondary-color); font-weight: 700;">
+            📲 لا تفوّت الفرصة وابدأ الآن مع TopCash ⤴️
+        </p>
+
+        <div class="action-buttons">
+            <a href="https://t.me/A_E208770BOT" target="_blank" class="btn-bot">
+                <i class="fas fa-robot"></i> ابدأ الاستثمار في البوت
+            </a>
+            <a href="https://t.me/topcash2005" target="_blank" class="btn-channel">
+                <i class="fab fa-telegram-plane"></i> قناة توبكاش الرسمية
+            </a>
+            <a href="URL_الصفحة_السابقة" class="btn-back">
+                <i class="fas fa-arrow-right"></i> رجوع
+            </a>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2024 توبكاش TopCash. جميع الحقوق محفوظة.</p>
+    </footer>
+
+</body>
+
+</html>

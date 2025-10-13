@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>⭐️📢 شروط وملاحظات بوت توبكاش الاستثماري</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <style>
+        /* 1. الإعدادات الأساسية والثوابت */
+        
+         :root {
+            --primary-color: #00bcd4;
+            /* أزرق سماوي (للتأكيد) */
+            --secondary-color: #ff5722;
+            /* برتقالي (للتنبيه) */
+            --background-dark: #111122;
+            /* لون الخلفية الداكن */
+            --background-darker: #0d0d1a;
+            /* لون أغمق للتذييل */
+            --text-light: #ffffff;
+            --text-dark: #333333;
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: 'Tajawal', sans-serif;
+            color: var(--text-light);
+            background-color: var(--background-dark);
+            direction: rtl;
+            overflow-x: hidden;
+            line-height: 1.6;
+            padding: 50px 20px;
+            position: relative;
+            /* لجعل الزر العائم يعمل بشكل صحيح */
+        }
+        
+        h1,
+        h2,
+        h3 {
+            font-weight: 700;
+        }
+        
+        a {
+            text-decoration: none;
+            color: var(--primary-color);
+            transition: color 0.3s;
+        }
+        
+        a:hover {
+            color: var(--secondary-color);
+        }
+        
+        .section-padding {
+            padding: 50px 0;
+        }
+        
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        /* 2. زر الرجوع العائم (Top-Right Corner) */
+        
+        .btn-back-float {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 10px 15px;
+            border-radius: 50px;
+            font-weight: 700;
+            background: transparent;
+            color: var(--text-light);
+            border: 2px solid var(--text-light);
+            z-index: 999;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+        }
+        
+        .btn-back-float:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            transform: scale(1.05);
+        }
+        
+        .btn-back-float i {
+            margin-left: 8px;
+            font-size: 1.1rem;
+        }
+        /* 3. شريط الترويسة (Header/Title) */
+        
+        .page-header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 20px 0;
+            border-bottom: 3px solid var(--primary-color);
+            /* إضافة مسافة لزر الرجوع العائم في الشاشات الكبيرة */
+            padding-top: 50px;
+        }
+        
+        .page-header h1 {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            text-shadow: 0 0 10px rgba(0, 188, 212, 0.5);
+            margin-bottom: 10px;
+        }
+        
+        .page-header p {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.8);
+        }
+        /* 4. قسم الشروط والملاحظات (Terms Section) */
+        
+        .terms-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .term-item {
+            background: rgba(255, 255, 255, 0.07);
+            padding: 20px;
+            border-radius: 12px;
+            border-right: 5px solid var(--primary-color);
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+            opacity: 0;
+            transform: translateY(20px);
+            height: 100%;
+        }
+        
+        .term-item:nth-child(even) {
+            border-right: 5px solid var(--secondary-color);
+        }
+        
+        .term-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+        }
+        
+        .term-icon {
+            font-size: 2.2rem;
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+            float: right;
+            margin-right: -5px;
+        }
+        
+        .term-item:nth-child(even) .term-icon {
+            color: var(--primary-color);
+        }
+        
+        .term-title {
+            font-size: 1.3rem;
+            color: var(--text-light);
+            margin-bottom: 10px;
+            padding-right: 35px;
+        }
+        
+        .term-item p {
+            font-size: 0.95rem;
+            clear: both;
+        }
+        
+        .full-width-card {
+            grid-column: span 1 / auto;
+        }
+        
+        .special-alert {
+            border: 2px solid #ff0000;
+            border-right: 5px solid #ff0000;
+            background: rgba(255, 0, 0, 0.15);
+        }
+        
+        .special-alert .term-icon {
+            color: #ff0000 !important;
+        }
+        
+        .compliance-note {
+            background-color: var(--primary-color);
+            color: var(--text-dark);
+            padding: 15px 30px;
+            border-radius: 50px;
+            max-width: fit-content;
+            margin: 40px auto 30px auto;
+            /* إضافة مسافة سفلية */
+            font-size: 1.1rem;
+            font-weight: 700;
+            box-shadow: 0 0 20px rgba(0, 188, 212, 0.7);
+            transition: transform 0.3s;
+            opacity: 0;
+            animation-name: slideUp;
+        }
+        
+        .compliance-note:hover {
+            transform: scale(1.03);
+            background-color: #00e5ff;
+        }
+        
+        .compliance-note i {
+            margin-left: 10px;
+        }
+        /* 5. شريط الروابط السفلي */
+        
+        .bottom-links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 50px;
+            padding-top: 30px;
+            border-top: 1px dashed rgba(255, 255, 255, 0.2);
+        }
+        
+        .bottom-links a {
+            padding: 12px 25px;
+            border-radius: 50px;
+            font-weight: 700;
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: flex;
+            align-items: center;
+            font-size: 1.1rem;
+        }
+        
+        .bottom-links a i {
+            margin-left: 8px;
+        }
+        
+        .btn-bot {
+            background-color: var(--secondary-color);
+            color: var(--text-light);
+            box-shadow: 0 0 15px rgba(255, 87, 34, 0.5);
+        }
+        
+        .btn-bot:hover {
+            transform: translateY(-3px) scale(1.02);
+        }
+        
+        .btn-channel {
+            background-color: var(--primary-color);
+            color: var(--text-dark);
+            box-shadow: 0 0 15px rgba(0, 188, 212, 0.5);
+        }
+        
+        .btn-channel:hover {
+            transform: translateY(-3px) scale(1.02);
+        }
+        /* 6. الأنيميشن (Animations) */
+        
+        @keyframes slideUp {
+            0% {
+                transform: translateY(20px);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+        
+        .animate-up {
+            animation: slideUp 0.7s ease-out forwards;
+        }
+        
+        .term-item:nth-child(1) {
+            animation-delay: 0.2s;
+        }
+        
+        .term-item:nth-child(2) {
+            animation-delay: 0.4s;
+        }
+        
+        .term-item:nth-child(3) {
+            animation-delay: 0.6s;
+        }
+        
+        .term-item:nth-child(4) {
+            animation-delay: 0.8s;
+        }
+        
+        .term-item:nth-child(5) {
+            animation-delay: 1.0s;
+        }
+        
+        .term-item:nth-child(6) {
+            animation-delay: 1.2s;
+        }
+        
+        .term-item:nth-child(7) {
+            animation-delay: 1.4s;
+        }
+        
+        .term-item:nth-child(8) {
+            animation-delay: 1.6s;
+        }
+        
+        .compliance-note {
+            animation-delay: 1.8s;
+            opacity: 0;
+            animation-name: slideUp;
+        }
+        /* 7. التجاوبية */
+        
+        @media (min-width: 900px) {
+            .full-width-card {
+                grid-column: span 2 / auto;
+            }
+            .page-header h1 {
+                font-size: 3rem;
+            }
+        }
+        
+        @media (max-width: 650px) {
+            .terms-grid {
+                grid-template-columns: 1fr;
+            }
+            .full-width-card {
+                grid-column: span 1 / auto;
+            }
+            .bottom-links a {
+                width: 100%;
+                justify-content: center;
+            }
+            .btn-back-float {
+                top: 10px;
+                right: 10px;
+                padding: 8px 12px;
+                font-size: 0.9rem;
+            }
+            .page-header {
+                padding-top: 60px;
+                /* زيادة مسافة علوية لزر الرجوع */
+            }
+        }
+        /* 8. التذييل (Footer) */
+        
+        footer {
+            background-color: var(--background-darker);
+            text-align: center;
+            padding: 20px;
+            margin-top: 50px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+    </style>
+</head>
+
+<body>
+
+    <a href="URL_الصفحة_السابقة" class="btn-back-float"><i class="fas fa-arrow-right"></i> رجوع للمتجر</a>
+
+    <div class="container">
+        <div class="page-header">
+            <h1>😀 شروط وملاحظات هامة لبوت توبكاش الاستثماري</h1>
+            <p>حرصًا منا على أمان حساباتكم وضمان سير الاستثمار بشكل منظم، يرجى الالتزام بالقوانين التالية:</p>
+        </div>
+
+        <section id="terms" class="terms section-padding">
+            <div class="terms-grid">
+
+                <div class="term-item animate-up">
+                    <i class="fas fa-lock term-icon"></i>
+                    <h3 class="term-title">1. شراء النقاط (الأمان)</h3>
+                    <p>يُمنع شراء النقاط من **خارج قائمة الوكلاء المعتمدين** داخل البوت، وأي مخالفة تعني حظر الطرفين مباشرة.</p>
+                </div>
+
+                <div class="term-item animate-up">
+                    <i class="fas fa-exchange-alt term-icon"></i>
+                    <h3 class="term-title">2. استلام النقاط (الكميات الكبيرة)</h3>
+                    <p>ممنوع استلام كميات كبيرة أو غير اعتيادية من حسابات وهمية أو حقيقية، والمخالفة تؤدي إلى حظر الطرفين.</p>
+                </div>
+
+                <div class="term-item animate-up">
+                    <i class="fas fa-user-secret term-icon"></i>
+                    <h3 class="term-title">3. التحايل والانتحال</h3>
+                    <p>أي محاولة للتحايل على الوكلاء أو الدعم أو انتحال صفة أحد أفراد الإدارة تؤدي إلى **حظر دائم**.</p>
+                </div>
+
+                <div class="term-item animate-up">
+                    <i class="fas fa-hand-holding-usd term-icon"></i>
+                    <h3 class="term-title">4. التعامل مع القروض</h3>
+                    <p>إرسال أو استلام النقاط من أصحاب القروض يؤدي إلى إنذارات متتالية و**حظر أسبوعي**.</p>
+                </div>
+
+                <div class="term-item animate-up">
+                    <i class="fas fa-code term-icon"></i>
+                    <h3 class="term-title">5. المطورين والمشاريع الأخرى</h3>
+                    <p>يُمنع استثمار أي دعم أو مشاريع لمطورين آخرين داخل البوت بأي شكل كان.</p>
+                </div>
+
+                <div class="term-item animate-up">
+                    <i class="fas fa-ban term-icon"></i>
+                    <h3 class="term-title">6. التسقيط والإساءة</h3>
+                    <p>أي محاولة تسقيط أو الإساءة للمستخدمين أو الإدارة تُعاقب بـ **حظر شهري أو سنوي** حسب الحالة.</p>
+                </div>
+
+                <div class="term-item full-width-card animate-up">
+                    <i class="fas fa-exclamation-triangle term-icon"></i>
+                    <h3 class="term-title">7. مسؤولية الحساب والأرباح</h3>
+                    <p>البوت غير مسؤول عن أي مشاكل تخص حسابك في تيليجرام، كما أن الأرباح قابلة للزيادة أو النقصان حسب طبيعة الاستثمار.</p>
+                </div>
+
+                <div class="term-item full-width-card special-alert animate-up">
+                    <i class="fas fa-hourglass-half term-icon"></i>
+                    <h3 class="term-title">8. في حال لم يقم المستخدم بالسحب</h3>
+                    <p>خلال مدة أقصاها **45 يوم**، يتم **حظر الحساب بشكل تلقائي**.</p>
+                </div>
+
+            </div>
+
+            <div class="compliance-note animate-up">
+                <i class="fas fa-shield-alt"></i>
+                <span>⚠️ الالتزام بهذه القوانين يحمي حسابك ويضمن استمرارك ضمن عائلة توبكاش.</span>
+            </div>
+
+            <div class="bottom-links">
+                <a href="https://t.me/topcash2005" target="_blank" class="btn-channel"><i class="fab fa-telegram-plane"></i> قناة توبكاش الرسمية</a>
+                <a href="https://t.me/A_E208770BOT" target="_blank" class="btn-bot"><i class="fas fa-robot"></i> ابدأ في البوت الآن</a>
+            </div>
+
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 توبكاش TopCash. جميع الحقوق محفوظة.</p>
+    </footer>
+
+</body>
+
+</html>
