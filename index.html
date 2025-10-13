@@ -4,144 +4,716 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>⭐️📢 إطلاق متجر توبكاش الإلكتروني الجديد</title>
+    <title>⭐️ مميزات وشروط وأسعار بوت توبكاش</title>
+
+    <!-- خط Tajawal -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;800;900&display=swap" rel="stylesheet">
+    <!-- أيقونات Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="styles.css">
+
+    <style>
+        /* 1. الإعدادات الأساسية والثوابت */
+        
+         :root {
+            --primary-color: #00bcd4;
+            /* أزرق سماوي (للتأكيد) */
+            --secondary-color: #ff5722;
+            /* برتقالي (للتنبيه) */
+            --gold-color: #ffeb3b;
+            /* لون ذهبي للنجوم */
+            --background-dark: #111122;
+            /* لون الخلفية الداكن */
+            --background-darker: #0d0d1a;
+            /* لون أغمق للتذييل */
+            --text-light: #ffffff;
+            --card-bg: rgba(255, 255, 255, 0.08);
+            /* خلفية بطاقات شفافة */
+            --shadow-color: rgba(0, 0, 0, 0.4);
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: 'Tajawal', sans-serif;
+            color: var(--text-light);
+            background: linear-gradient(135deg, var(--background-dark), #1a0f30);
+            direction: rtl;
+            min-height: 100vh;
+            line-height: 1.7;
+            padding-bottom: 50px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        /* 2. تصميم الأقسام العامة */
+        
+        .section-padding {
+            padding: 60px 0;
+        }
+        
+        h1,
+        h2 {
+            font-weight: 900;
+            color: var(--text-light);
+            text-align: center;
+            margin-bottom: 50px;
+            text-shadow: 0 4px 8px var(--shadow-color);
+        }
+        /* 3. تصميم بطاقات المميزات (Features) */
+        
+        #features h2 {
+            font-size: 2.2rem;
+            color: var(--gold-color);
+            margin-bottom: 40px;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+        
+        .feature-card {
+            background-color: var(--card-bg);
+            border: 1px solid rgba(0, 188, 212, 0.3);
+            border-radius: 15px;
+            padding: 25px;
+            text-align: center;
+            backdrop-filter: blur(5px);
+            box-shadow: 0 8px 30px var(--shadow-color);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 15px 40px rgba(0, 188, 212, 0.3);
+        }
+        
+        .feature-icon {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+        
+        .feature-card h3 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        
+        .feature-card p {
+            font-size: 0.95rem;
+            color: rgba(255, 255, 255, 0.8);
+        }
+        /* 4. تصميم الأسعار (Pricing) */
+        
+        #pricing {
+            padding-top: 20px;
+        }
+        
+        #pricing h2 {
+            font-size: 2.5rem;
+            color: var(--secondary-color);
+            text-shadow: 0 0 10px rgba(255, 87, 34, 0.5);
+            margin-bottom: 20px;
+        }
+        
+        #pricing h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 30px;
+            color: var(--primary-color);
+        }
+        
+        .alert-box {
+            background-color: rgba(255, 87, 34, 0.15);
+            border-left: 5px solid var(--secondary-color);
+            padding: 15px;
+            margin: 20px auto 40px;
+            max-width: 600px;
+            border-radius: 8px;
+            text-align: right;
+            font-size: 1rem;
+        }
+        
+        .alert-box strong {
+            color: var(--secondary-color);
+            font-weight: 900;
+            margin-left: 10px;
+        }
+        
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+        
+        .price-card {
+            padding: 30px 20px;
+            border-radius: 15px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 6px 20px var(--shadow-color);
+            background-color: var(--card-bg);
+            border: 2px solid transparent;
+        }
+        
+        .price-card.orange {
+            border-color: var(--secondary-color);
+            background: linear-gradient(145deg, rgba(255, 87, 34, 0.15), rgba(255, 87, 34, 0.05));
+        }
+        
+        .price-card.black {
+            border-color: var(--primary-color);
+            background: linear-gradient(145deg, rgba(0, 188, 212, 0.15), rgba(0, 188, 212, 0.05));
+        }
+        
+        .price-card:hover {
+            transform: translateY(-7px) scale(1.05);
+            box-shadow: 0 15px 40px rgba(255, 235, 59, 0.3);
+        }
+        
+        .cash-amount {
+            font-size: 1.1rem;
+            font-weight: 400;
+            color: var(--text-light);
+            margin-bottom: 15px;
+        }
+        
+        .price-amount {
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: var(--gold-color);
+            margin-bottom: 25px;
+            text-shadow: 0 0 10px rgba(255, 235, 59, 0.5);
+        }
+        
+        .price-btn {
+            display: block;
+            background-color: var(--secondary-color);
+            color: var(--text-light);
+            padding: 10px;
+            border-radius: 50px;
+            font-weight: 700;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        
+        .price-btn:hover {
+            background-color: #ff3d00;
+            transform: scale(1.05);
+        }
+        /* عداد تنازلي */
+        
+        .countdown-bar {
+            text-align: center;
+            background-color: rgba(0, 188, 212, 0.15);
+            padding: 15px 25px;
+            border-radius: 50px;
+            max-width: 500px;
+            margin: 20px auto 30px;
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            border: 2px solid var(--primary-color);
+        }
+        
+        .countdown-bar i {
+            margin: 0 10px;
+            color: var(--gold-color);
+        }
+        
+        #countdown-timer {
+            font-size: 1.6rem;
+            font-family: monospace;
+            display: inline-block;
+            min-width: 100px;
+            text-align: center;
+        }
+        
+        .agent-note {
+            text-align: center;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 40px;
+        }
+        
+        .agent-note strong {
+            color: var(--gold-color);
+        }
+        
+        .contact-info {
+            text-align: center;
+            margin-top: 30px;
+        }
+        
+        .contact-info h3 {
+            font-size: 1.3rem;
+            color: var(--text-light);
+            margin-bottom: 20px;
+        }
+        
+        .contact-link {
+            display: block;
+            width: fit-content;
+            margin: 10px auto;
+            padding: 10px 20px;
+            border-radius: 50px;
+            background-color: var(--card-bg);
+            color: var(--primary-color);
+            font-weight: 700;
+            transition: background-color 0.3s;
+            border: 1px solid var(--primary-color);
+        }
+        
+        .contact-link i {
+            margin-left: 10px;
+        }
+        
+        .contact-link:hover {
+            background-color: rgba(0, 188, 212, 0.2);
+        }
+        /* 5. تصميم الشروط والملاحظات (Terms) */
+        
+        .page-header {
+            padding: 40px 20px 20px;
+            text-align: center;
+        }
+        
+        .page-header h1 {
+            font-size: 2.5rem;
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+        }
+        
+        .page-header p {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 40px;
+        }
+        
+        .terms-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+        
+        .term-item {
+            background-color: var(--card-bg);
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 4px 15px var(--shadow-color);
+            border-right: 5px solid var(--primary-color);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .term-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0, 188, 212, 0.5);
+        }
+        
+        .term-icon {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            float: right;
+            margin-right: -10px;
+        }
+        
+        .term-title {
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            padding-right: 40px;
+            margin-bottom: 10px;
+        }
+        
+        .term-item p {
+            font-size: 0.95rem;
+            color: rgba(255, 255, 255, 0.85);
+            margin-top: 15px;
+            line-height: 1.6;
+        }
+        /* بطاقة التنبيه الخاصة */
+        
+        .special-alert {
+            background-color: rgba(255, 87, 34, 0.15);
+            border: 1px solid var(--secondary-color);
+            border-right: 5px solid var(--secondary-color);
+        }
+        
+        .special-alert .term-icon,
+        .special-alert .term-title {
+            color: var(--secondary-color);
+        }
+        /* البطاقات بكامل العرض */
+        
+        .full-width-card {
+            grid-column: 1 / -1;
+        }
+        /* 6. الملاحظات النهائية والأزرار */
+        
+        .compliance-note {
+            text-align: center;
+            margin-top: 40px;
+            padding: 15px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--gold-color);
+            border: 1px solid var(--gold-color);
+        }
+        
+        .compliance-note i {
+            color: var(--secondary-color);
+            margin-left: 10px;
+        }
+        
+        .bottom-links {
+            text-align: center;
+            margin-top: 40px;
+        }
+        
+        .btn-channel,
+        .btn-bot {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 30px;
+            margin: 0 10px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1rem;
+            transition: all 0.3s;
+            text-decoration: none;
+            box-shadow: 0 4px 15px var(--shadow-color);
+        }
+        
+        .btn-channel {
+            background-color: var(--primary-color);
+            color: var(--background-dark);
+        }
+        
+        .btn-channel:hover {
+            background-color: #00e5ff;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 188, 212, 0.6);
+        }
+        
+        .btn-bot {
+            background-color: var(--secondary-color);
+            color: var(--text-light);
+        }
+        
+        .btn-bot:hover {
+            background-color: #ff3d00;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 87, 34, 0.6);
+        }
+        
+        .btn-channel i,
+        .btn-bot i {
+            margin-left: 10px;
+        }
+        /* 7. الأنيميشن */
+        
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes slideInFromTop {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .animate-up {
+            opacity: 0;
+            animation: slideUp 0.8s ease-out forwards;
+        }
+        
+        .animate-in {
+            opacity: 0;
+            animation: slideInFromTop 0.8s ease-out forwards;
+        }
+        
+        .delay-1 {
+            animation-delay: 0.2s;
+        }
+        
+        .delay-2 {
+            animation-delay: 0.4s;
+        }
+        
+        .delay-3 {
+            animation-delay: 0.6s;
+        }
+        
+        .delay-4 {
+            animation-delay: 0.8s;
+        }
+        
+        .delay-5 {
+            animation-delay: 1.0s;
+        }
+        
+        .delay-6 {
+            animation-delay: 1.2s;
+        }
+        /* 8. التجاوبية (Responsive Design) */
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            h2 {
+                font-size: 1.8rem;
+            }
+            #pricing h2 {
+                font-size: 2rem;
+            }
+            .features-grid,
+            .terms-grid,
+            .pricing-grid {
+                grid-template-columns: 1fr;
+            }
+            .full-width-card {
+                grid-column: auto;
+            }
+            .term-title {
+                padding-right: 0;
+                text-align: center;
+                border-right: none;
+            }
+            .term-icon {
+                float: none;
+                margin-right: 0;
+                display: block;
+                text-align: center;
+            }
+            .term-item {
+                text-align: right;
+                border-right: 5px solid var(--primary-color);
+            }
+            .bottom-links {
+                display: flex;
+                flex-direction: column;
+                gap: 15px;
+            }
+            .btn-channel,
+            .btn-bot {
+                width: 80%;
+                margin: 0 auto;
+            }
+            .countdown-bar {
+                font-size: 1.2rem;
+                padding: 12px 20px;
+            }
+            #countdown-timer {
+                font-size: 1.4rem;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-    <header>
-        <div class="logo">
-            <span>⭐️📢 توبكاش</span>
-        </div>
-        <nav>
-            <a href="#hero">الرئيسية</a>
-            <a href="#features">المميزات</a>
-            <a href="#pricing">الأسعار والخصومات</a>
-            <a href="https://t.me/topcash2005" target="_blank">اتصل بنا</a>
-        </nav>
-        <a href="https://t.me/A_E208770BOT" target="_blank" class="cta-button">ابدأ تجربتك الآن!</a>
-    </header>
-
-    <section id="hero" class="hero">
-        <div class="hero-content">
-            <h1 class="animate-in">🌟 انطلاق متجر توبكاش الإلكتروني الجديد!</h1>
-            <p class="animate-in delay-1">السرعة، الأمان، والتصميم العصري بين يديك.</p>
-            <div class="hero-actions animate-in delay-2">
-                <a href="#pricing" class="main-btn">اكتشف العروض الآن</a>
-                <a href="#features" class="secondary-btn">شاهد المميزات</a>
-            </div>
-            <div class="urgent-strip animate-in delay-3">
-                📢 بمناسبة الإطلاق: خصم **%** على جميع أسعار النقاط لفترة محدودة!
-            </div>
-        </div>
-    </section>
-
-    <section id="features" class="features section-padding">
-        <h2>مميزات فريدة تجعل توبكاش خيارك الأول ⭐️</h2>
-        <div class="features-grid">
-            <div class="feature-card animate-up">
-                <i class="fas fa-bolt feature-icon"></i>
-                <h3>تسليم فوري</h3>
-                <p>تسليم العدادات تلقائيًا مباشرة.</p>
-            </div>
-            <div class="feature-card animate-up delay-1">
-                <i class="fas fa-credit-card feature-icon"></i>
-                <h3>سحب آلي</h3>
-                <p>السحب واستلام الأرصدة 💰 (تلقائيًا من داخل المتجر).</p>
-            </div>
-            <div class="feature-card animate-up delay-2">
-                <i class="fas fa-star feature-icon"></i>
-                <h3>نجوم تيليجرام</h3>
-                <p>شراء وإهداء نجوم تيليجرام (مباشرة).</p>
-            </div>
-            <div class="feature-card animate-up delay-3">
-                <i class="fas fa-lock feature-icon"></i>
-                <h3>تفعيل مميز</h3>
-                <p>تفعيل التيليجرام المميز (تلقائيًا).</p>
-            </div>
-            <div class="feature-card animate-up delay-4">
-                <i class="fas fa-gamepad feature-icon"></i>
-                <h3>شحن الألعاب</h3>
-                <p>شحن الألعاب مثل ببجي (قريباً جداً).</p>
-            </div>
-            <div class="feature-card animate-up delay-5">
-                <i class="fas fa-gift feature-icon"></i>
-                <h3>إهداء سهل</h3>
-                <p>إهداء العدادات لشخص آخر (تلقائيًا).</p>
-            </div>
-            <div class="feature-card animate-up delay-6">
-                <i class="fas fa-exchange-alt feature-icon"></i>
-                <h3>نقل مرن</h3>
-                <p>نقل العدادات بين المستخدمين (تلقائيًا دون تدخل إداري).</p>
-            </div>
-        </div>
-    </section>
-
+    <!-- قسم الأسعار والخصومات -->
     <section id="pricing" class="pricing section-padding">
-        <h2 class="animate-in">📢 لا تفوّت الخصم الهائل: **%** لفترة محدودة!</h2>
+        <div class="container">
+            <h2 class="animate-in">📢 لا تفوّت الخصم الهائل: <strong style="color: var(--gold-color);">50%</strong> لفترة محدودة!</h2>
 
-        <div class="alert-box animate-in delay-1">
-            <strong>تنويه ⭕️:</strong> النقاط القديمة لا تنتقل إلى المُتجر الإلكتروني الجديد. الخصم لتعويضكم!
-        </div>
-
-        <h3 class="animate-in delay-2">قائمة أسعار الماستر بعد تطبيق التخفيض ⬇️</h3>
-
-        <div class="pricing-grid">
-            <div class="price-card orange animate-up">
-                <p class="cash-amount">17,000 توبكاش</p>
-                <p class="price-amount">4,500 د.ع</p>
-                <a href="https://t.me/topcash2005" target="_blank" class="price-btn">شراء الآن</a>
+            <div class="alert-box animate-in delay-1">
+                <strong>تنويه ⭕️:</strong> النقاط القديمة لا تنتقل إلى المُتجر الإلكتروني الجديد. الخصم لتعويضكم!
             </div>
-            <div class="price-card black animate-up delay-1">
-                <p class="cash-amount">34,000 توبكاش</p>
-                <p class="price-amount">9,000 د.ع</p>
-                <a href="https://t.me/topcash2005" target="_blank" class="price-btn">شراء الآن</a>
-            </div>
-            <div class="price-card orange animate-up delay-2">
-                <p class="cash-amount">68,000 توبكاش</p>
-                <p class="price-amount">18,000 د.ع</p>
-                <a href="https://t.me/topcash2005" target="_blank" class="price-btn">شراء الآن</a>
-            </div>
-            <div class="price-card black animate-up delay-3">
-                <p class="cash-amount">170,000 توبكاش</p>
-                <p class="price-amount">45,000 د.ع</p>
-                <a href="https://t.me/topcash2005" target="_blank" class="price-btn">شراء الآن</a>
-            </div>
-        </div>
 
-        <div class="countdown-bar animate-in delay-4">
-            <i class="fas fa-clock"></i>
-            <span>ينتهي العرض في: </span>
-            <span id="countdown-timer">00:00:00</span>
-            <i class="fas fa-clock"></i>
-        </div>
+            <h3 class="animate-in delay-2">قائمة أسعار الماستر بعد تطبيق التخفيض ⬇️</h3>
 
-        <p class="agent-note animate-in delay-5">
-            يتم شراء النقاط من داخل المتجر عبر الوكلاء الرسميين فقط ⭐️
-        </p>
+            <div class="pricing-grid">
+                <div class="price-card orange animate-up">
+                    <p class="cash-amount">17,000 توبكاش</p>
+                    <p class="price-amount">4,500 د.ع</p>
+                    <a href="https://t.me/topcash2005" target="_blank" class="price-btn">شراء الآن</a>
+                </div>
+                <div class="price-card black animate-up delay-1">
+                    <p class="cash-amount">34,000 توبكاش</p>
+                    <p class="price-amount">9,000 د.ع</p>
+                    <a href="https://t.me/topcash2005" target="_blank" class="price-btn">شراء الآن</a>
+                </div>
+                <div class="price-card orange animate-up delay-2">
+                    <p class="cash-amount">68,000 توبكاش</p>
+                    <p class="price-amount">18,000 د.ع</p>
+                    <a href="https://t.me/topcash2005" target="_blank" class="price-btn">شراء الآن</a>
+                </div>
+                <div class="price-card black animate-up delay-3">
+                    <p class="cash-amount">170,000 توبكاش</p>
+                    <p class="price-amount">45,000 د.ع</p>
+                    <a href="https://t.me/topcash2005" target="_blank" class="price-btn">شراء الآن</a>
+                </div>
+            </div>
 
-        <div class="contact-info animate-in delay-6">
-            <h3>تواصل مع وكلائنا:</h3>
-            <a href="https://t.me/topcash2005" target="_blank" class="contact-link">
-                <i class="fab fa-telegram-plane"></i> الوكيل الرسمي: @topcash2005
-            </a>
-            <a href="https://t.me/A_E208770BOT" target="_blank" class="contact-link">
-                <i class="fas fa-robot"></i> بوت المتجر: @A_E208770BOT
-            </a>
+            <div class="countdown-bar animate-in delay-4">
+                <i class="fas fa-clock"></i>
+                <span>ينتهي العرض في: </span>
+                <span id="countdown-timer">00:00:00</span>
+                <i class="fas fa-clock"></i>
+            </div>
+
+            <p class="agent-note animate-in delay-5">
+                يتم شراء النقاط من داخل المتجر عبر الوكلاء الرسميين فقط ⭐️
+            </p>
+
+            <div class="contact-info animate-in delay-6">
+                <h3>تواصل مع وكلائنا:</h3>
+                <a href="https://t.me/topcash2005" target="_blank" class="contact-link">
+                    <i class="fab fa-telegram-plane"></i> الوكيل الرسمي: @topcash2005
+                </a>
+                <a href="https://t.me/A_E208770BOT" target="_blank" class="contact-link">
+                    <i class="fas fa-robot"></i> بوت المتجر: @A_E208770BOT
+                </a>
+            </div>
         </div>
     </section>
 
-    <footer>
-        <p>&copy; 2024 توبكاش TopCash. جميع الحقوق محفوظة.</p>
-        <div>
-            <a href="#"><i class="fab fa-telegram-plane"></i></a>
+    <!-- قسم المميزات -->
+    <section id="features" class="features section-padding">
+        <div class="container">
+            <h2>مميزات فريدة تجعل توبكاش خيارك الأول ⭐️</h2>
+            <div class="features-grid">
+                <div class="feature-card animate-up">
+                    <i class="fas fa-bolt feature-icon"></i>
+                    <h3>تسليم فوري</h3>
+                    <p>تسليم العدادات تلقائيًا مباشرة.</p>
+                </div>
+                <div class="feature-card animate-up delay-1">
+                    <i class="fas fa-credit-card feature-icon"></i>
+                    <h3>سحب آلي</h3>
+                    <p>السحب واستلام الأرصدة 💰 (تلقائيًا من داخل المتجر).</p>
+                </div>
+                <div class="feature-card animate-up delay-2">
+                    <i class="fas fa-star feature-icon"></i>
+                    <h3>نجوم تيليجرام</h3>
+                    <p>شراء وإهداء نجوم تيليجرام (مباشرة).</p>
+                </div>
+                <div class="feature-card animate-up delay-3">
+                    <i class="fas fa-lock feature-icon"></i>
+                    <h3>تفعيل مميز</h3>
+                    <p>تفعيل التيليجرام المميز (تلقائيًا).</p>
+                </div>
+                <div class="feature-card animate-up delay-4">
+                    <i class="fas fa-gamepad feature-icon"></i>
+                    <h3>شحن الألعاب</h3>
+                    <p>شحن الألعاب مثل ببجي (قريباً جداً).</p>
+                </div>
+                <div class="feature-card animate-up delay-5">
+                    <i class="fas fa-gift feature-icon"></i>
+                    <h3>إهداء سهل</h3>
+                    <p>إهداء العدادات لشخص آخر (تلقائيًا).</p>
+                </div>
+                <div class="feature-card animate-up delay-6">
+                    <i class="fas fa-exchange-alt feature-icon"></i>
+                    <h3>نقل مرن</h3>
+                    <p>نقل العدادات بين المستخدمين (تلقائيًا دون تدخل إداري).</p>
+                </div>
+            </div>
         </div>
-    </footer>
+    </section>
+
+    <!-- قسم الشروط والملاحظات -->
+    <section id="terms-section" class="section-padding" style="padding-top: 0;">
+        <div class="container">
+            <div class="page-header">
+                <h1>😀 شروط وملاحظات هامة لبوت توبكاش الاستثماري</h1>
+                <p>حرصًا منا على أمان حساباتكم وضمان سير الاستثمار بشكل منظم، يرجى الالتزام بالقوانين التالية:</p>
+            </div>
+
+            <div class="terms-grid">
+
+                <div class="term-item animate-up">
+                    <i class="fas fa-lock term-icon"></i>
+                    <h3 class="term-title">1. شراء النقاط (الأمان)</h3>
+                    <p>يُمنع شراء النقاط من **خارج قائمة الوكلاء المعتمدين** داخل البوت، وأي مخالفة تعني حظر الطرفين مباشرة.</p>
+                </div>
+
+                <div class="term-item animate-up delay-1">
+                    <i class="fas fa-exchange-alt term-icon"></i>
+                    <h3 class="term-title">2. استلام النقاط (الكميات الكبيرة)</h3>
+                    <p>ممنوع استلام كميات كبيرة أو غير اعتيادية من حسابات وهمية أو حقيقية، والمخالفة تؤدي إلى حظر الطرفين.</p>
+                </div>
+
+                <div class="term-item animate-up delay-2">
+                    <i class="fas fa-user-secret term-icon"></i>
+                    <h3 class="term-title">3. التحايل والانتحال</h3>
+                    <p>أي محاولة للتحايل على الوكلاء أو الدعم أو انتحال صفة أحد أفراد الإدارة تؤدي إلى **حظر دائم**.</p>
+                </div>
+
+                <div class="term-item animate-up delay-3">
+                    <i class="fas fa-hand-holding-usd term-icon"></i>
+                    <h3 class="term-title">4. التعامل مع القروض</h3>
+                    <p>إرسال أو استلام النقاط من أصحاب القروض يؤدي إلى إنذارات متتالية و**حظر أسبوعي**.</p>
+                </div>
+
+                <div class="term-item animate-up delay-4">
+                    <i class="fas fa-code term-icon"></i>
+                    <h3 class="term-title">5. المطورين والمشاريع الأخرى</h3>
+                    <p>يُمنع استثمار أي دعم أو مشاريع لمطورين آخرين داخل البوت بأي شكل كان.</p>
+                </div>
+
+                <div class="term-item animate-up delay-5">
+                    <i class="fas fa-ban term-icon"></i>
+                    <h3 class="term-title">6. التسقيط والإساءة</h3>
+                    <p>أي محاولة تسقيط أو الإساءة للمستخدمين أو الإدارة تُعاقب بـ **حظر شهري أو سنوي** حسب الحالة.</p>
+                </div>
+
+                <div class="term-item full-width-card animate-up delay-6">
+                    <i class="fas fa-exclamation-triangle term-icon"></i>
+                    <h3 class="term-title">7. مسؤولية الحساب والأرباح</h3>
+                    <p>البوت غير مسؤول عن أي مشاكل تخص حسابك في تيليجرام، كما أن الأرباح قابلة للزيادة أو النقصان حسب طبيعة الاستثمار.</p>
+                </div>
+
+                <div class="term-item full-width-card special-alert animate-up" style="animation-delay: 1.4s;">
+                    <i class="fas fa-hourglass-half term-icon"></i>
+                    <h3 class="term-title">8. في حال لم يقم المستخدم بالسحب</h3>
+                    <p>خلال مدة أقصاها **45 يوم**، يتم **حظر الحساب بشكل تلقائي**.</p>
+                </div>
+
+            </div>
+
+            <div class="compliance-note animate-up" style="animation-delay: 1.6s;">
+                <i class="fas fa-shield-alt"></i>
+                <span>⚠️ الالتزام بهذه القوانين يحمي حسابك ويضمن استمرارك ضمن عائلة توبكاش.</span>
+            </div>
+
+            <div class="bottom-links animate-up" style="animation-delay: 1.8s;">
+                <a href="https://t.me/topcash2005" target="_blank" class="btn-channel"><i class="fab fa-telegram-plane"></i> قناة توبكاش الرسمية</a>
+                <a href="https://t.me/A_E208770BOT" target="_blank" class="btn-bot"><i class="fas fa-robot"></i> ابدأ في البوت الآن</a>
+            </div>
+
+        </div>
+    </section>
 
     <script>
         function updateCountdown() {
@@ -170,6 +742,7 @@
         setInterval(updateCountdown, 1000);
         updateCountdown(); // للتشغيل فوراً عند تحميل الصفحة
     </script>
+
 </body>
 
 </html>
